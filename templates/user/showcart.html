@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+{% if not request.session.userid %}
+<script>
+    alert("You have lognin first")
+    location.href='/user/signin/'
+</script>
+{% endif %}
+<div class="row">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">YOUR ITEM IN</span> <b style="color:#ff9800">CART <i class="fa-solid fa-user-plus"></i></b></div>
+</div>
+<table class="table table-striped">
+    <tr>
+    <th>Product pic</th>
+    <th>Price</th>
+    <th>After discound</th>
+    <th>Size</th>
+    <th>Color</th>
+    <th>Product Delivery</th>
+    <th>Added Date</th>
+    <th>Remove</th>
+    <th>Order</th>
+    </tr>
+    {% for i in cdata %}
+    <tr>
+        <td><img src="/{{i.10}}" class="img-thumbnail" style="max-height: 200px;"></td>
+        <td><b class="text-danger">{{i.1}}</b></td>
+        <td><b class="text-success">{{i.2}}</b></td>
+        <td><span class="btn bg-gcolor">{{i.3}}</span></td>
+        <td><div style="height: 35px;width:35px;background: {{i.4}};"></div></td>
+        <td>{{i.6}}</td>
+        <td>{{i.14}}</td>
+        <td><a href="/user/showcart?msg={{i.11}}" class="btn btn-danger">Remove <i class="fa-solid fa-xmark"></i></a></td>
+        <td><a href="/user/showcart?cid={{i.11}}&pid={{i.13}}" class="btn bg-gcolor">Order Now</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .rimg
+    {
+        background: url("{% static 'images/hero-2.jpg'%}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 30px;
+    }
+    .f
+    {
+        min-height: 500px;
+        background: rgba(256,256,256,.5);
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px 2px gray ;
+        color:black;
+    }
+    .pt1
+    {
+        height: 50px;
+        border-radius: 25px;
+        margin-top: 20px;
+        border: none;
+        padding-left: 40px;
+        box-sizing: border-box;
+        outline:none;
+        font-size: 20px;
+    }
+    b:hover
+    {
+        color:#ff8800;
+        text-decoration: underline;
+    }
+    .btn1
+	{
+		height:52px;
+		border-bottom:10px solid #ff8800;
+		border-radius:24px;
+        box-sizing: border-box;
+	}
+    .btn1:hover
+    {
+        border-bottom:10px solid #2e2e2e;
+        transition:all ease-in .3s;
+    }
+	.btn2
+	{
+	      height:44px;
+          font-size: 20px;
+          padding-bottom: 2px;
+          color: black;
+          font-weight: bold;
+          border: 3px solid #ff8800;
+          background: white;
+	}
+	.btn2:hover
+	{
+		background:#ff9800;
+		color:white;
+		font-size:18px;
+        border: 3px solid #2e2e2e;
+		transition:all ease-in .3s;
+	}
+    
+
+</style>
+<div class="container-fluid rimg">
+<div class="row">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">LOGIN</span> <b style="color:#ff9800">HERE <i class="fa-solid fa-user-plus"></i></b></div>
+</div>
+<div class="row p-0">
+    <div class="col-sm-5 mx-auto f py-5 px-5">
+        <div style="font-size: 30px; text-align: center;">Welcome to FavCart India
+        </div>
+        <p style="font-size: 17px;text-align: center;" class="mt-2">LogIn to your Online Training </p> 
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="email" class="form-control pt1 mt-4" required name="e"/>
+            <input type="password" class="form-control pt1" required name="p"/>
+            <div class="btn1 mt-4 ">
+            <input type="submit" value="LOGIN" class="btn btn2 form-control rounded rounded-4">
+            </div><br/><br/>
+            <hr/><br/>
+            <div style="text-align: center;font-size: 18px;">Don't have an account? <a href="/user/signup/" style="text-decoration:none;color:black"><b>Sign Up</b></a></div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .r
+    {
+        background:rgba(256,256,256,.4);
+        padding: 30px 30px;
+        box-shadow: 2px 2px 5px 2px gray ;
+    }
+    .c8
+    {
+        
+        min-height: 560px;
+        padding: 0px 20px;
+    }
+    .c4
+    {
+        background: rgba(224, 242, 241,.5);
+        min-height: 560px;
+        border-radius: 5px;
+        padding: 30px 35px;
+    }
+    .cf1
+    {
+        background: wheat;
+        min-height: 600px;
+        padding: 0% 13%;
+        padding-bottom: 25px;
+        background: url("{% static 'images/hero-1.jpg'%}");
+        background-size: cover;
+        background-position: center;
+        
+    }
+    .rt
+    {
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .btn1
+    {
+        padding: 2% 5%;
+        margin-top: 20px;
+        background: white;
+        border:1px solid #ff8800;
+        color: #ff9800;
+        border-radius: 3px;
+        transition: all ease-in .3s;
+        
+    }
+    .btn1:hover
+    {
+        background: #ff9800;
+        color: white;
+        transition: all ease-in .3s;
+    }
+    .b1{
+        border:1px solid gray;
+        border-radius: 3px;
+        height: 40px;
+    }
+    .ic3
+    {
+        margin-right: 10px;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        background: #ff8800;
+        font-size: 25px;
+        line-height: 35px;
+        text-align: center;
+        color: white;
+    }
+    .txti
+    {
+        height:40px ;
+        width: 40px;
+        border: 1px solid gray;
+    }
+    .adr
+    {
+        min-height: 300px;
+    }
+    .map
+    {
+        min-height: 300px;
+        
+    }
+</style>
+<div class="container-fluid cf1">
+    <div class="row">
+        <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">Contact</span> <b style="color:#ff9800">Us <i class="fa-solid fa-location-dot"></i></b></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="row r">
+                <div class="col-sm-8 c8">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div style="font-size: 25px;">Send Your Message
+                            {% if m%}
+                            <span class="alert alert-success" style="font-size:15px ;">
+                                    Your Message Send Succesfully
+                            </span>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6 rt">
+                                Your Name : <br/>
+                                <div class="input-group">
+                                    <i class="input-group-text bg-gcolor text-light txti"><i class="fa-solid fa-user"></i></i>
+                                    <input type="text" name="name" class="form-control b1" placeholder="Enter Your Name* ">
+                                </div>
+                            </div>
+                            <div class="col-sm-6 rt">
+                                Your Contact : <br/>
+                                <div class="input-group">
+                                    <i class="input-group-text bg-gcolor text-light txti"><i class="fa-solid fa-phone"></i></i>  
+                                    <input type="number" name="mob" class="form-control b1" placeholder="Enter Your Contact Number* ">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rt">
+                            <div class="col-sm-12">
+                                Your Email : <br>
+                                <div class="input-group">
+                                    <i class="input-group-text bg-gcolor text-light txti"><i class="fa-solid fa-envelope"></i></i>
+                                    <input type="email" name="email" class="form-control b1" required placeholder="Enter Your Email*">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row rt">
+                            <div class="col-sm-12">
+                                Your Message : <br><textarea name="msg" class="form-control" rows="3" placeholder="Type Yore Message Here*"></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" value="SEND MESSAGE" class="btn btn1">
+                    </form>
+                </div>
+                <div class="col-sm-4 c4">
+                    <div class="fs-3">Contact Info</div>
+                    <div class="fs-5 ps-3 py-1"><i class="fa-solid fa-location-dot ic3"></i>Offline Address</div>
+                    <p class="ps-5" style="font-size: 15px;">Rampur Ganeshpur Gotwa Road Police Chauki<br>
+                    And RCC Degree College Ganeshpur Bahari<br>
+                    Ganeshpur background
+                    </p>
+                    <div class="fs-5 ps-3 py-2"><i class="fa-solid fa-phone ic3"></i>Call Us</div>
+                    <p>
+                        <a href="" class="ps-5" style="text-decoration: none;color: black; font-size: 15px;">+91 8604163751</a><br/>
+                        <a href="" class="ps-5" style="text-decoration: none;color:black;font-size: 15px;">+91 6386623856</a>
+                    </p>
+                    <div class="fs-5 ps-3 py-2"><i class="fa-solid fa-envelope ic3"></i>Maill Us</div>
+                    <p>
+                        <a href="" class="ps-5" style="text-decoration: none;color: black;font-size: 15px;">vc2448296@gmail.com</a><br/>
+                        <a href="" class="ps-5" style="text-decoration: none;color:black;font-size: 15px;">Vikas38726@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row adr">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-4 mx-auto fs-2 text-center pt-3"><span style="text-decoration: underline #ff8800;">Find us on </span><span class="txt-color">Google Map <i class="fa-solid fa-location-dot"></i></span>
+                <p style="font-size: 16px;">View us on Google map easily</p>
+            </div>
+        </div>
+        <div class="row map">
+            <div class="col-sm-12 ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3559.7866872211357!2d83.06766476512014!3d26.846736183156136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smmit%20sk%20nagar!5e0!3m2!1sen!2sin!4v1662131372188!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

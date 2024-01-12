@@ -1,0 +1,203 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<style>
+    .ab
+    {
+        min-height: 300px;
+    }
+    .conbtn
+    {
+        border-bottom: 7px solid black;
+        padding: 10px;
+        border-radius: 4px;
+    }
+    .divbtn1
+	{
+		height:52px;
+		border-bottom:10px solid #ff8800;
+		border-radius:24px;
+        box-sizing: border-box;
+        width: 152px;
+	}
+    .divbtn1:hover
+    {
+        border-bottom:10px solid #424242;
+        transition:all ease-in .3s;
+    }
+    .divbtn2
+	{
+	      height:44px;
+          font-size: 20px;
+          padding-bottom: 2px;
+          color: black;
+          font-weight: bold;
+          border: 3px solid #ff8800;
+          background: white;
+	}
+    .divbtn2:hover
+	{
+		background:#ff9800;
+        font-size: 20px;
+		color:white;
+        border: 3px solid #424242;
+		transition:all ease-in .3s;
+	}
+    .abicon
+    {
+        font-size: 70px;
+        text-align: center;
+        line-height: 20px;
+        padding-top: 15px;
+        color: #ff8800;
+        padding-left: 35px;
+    }
+</style>
+<div class="row text-center">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">ABOUT </span> <b style="color:#ff9800">US <i class="fa-solid fa-cart-arrow-down"></i></b>
+        <p style="font-size: 15px;">There are multiple reason  to choose us for your multiple ourpose related to online shopping<br/>
+        Belive on my website you will find us best suitable product 
+        </p>
+    </div>
+    
+</div>
+<div class="row ab py-2">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5">
+        <iframe class="rounded rounded-2 border border-3 border-light" width="100%" height="315" src="https://www.youtube.com/embed/NJkaY6Sqwl0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="col-sm-5 ps-3">
+        <div class="fs-4">
+            Welcome To The <b style="color:#ff8800">F</b>avCart <b style="color: #ff9800;">India</b>, Just There  Is Some Litle Word To Describe Our Work Scope
+        </div>
+        <p>The best way to learn something is learning from the best! In this article, I will analyse the most outstanding eCommerce About Us page examples to help you learn the lesson behind: How Shopify About Us pages really increase eCommerce conversion rates.</p>
+        <br/>
+        <div class="divbtn1">
+        <a href="/user/enquiry/"><input type="submit" class="divbtn2 rounded rounded-4 btn" value="CONTACT US"/></a>
+        </div>
+    </div>
+    
+    <div class="col-sm-1"></div>
+</div>
+<div class="row">
+    <div class="col-sm-1"></div>
+<!--STARTCART-->
+<div class="col-sm-10">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card mb-3 w-100 boxshadow">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{% static 'images/ab1.jpeg'%}" class="img-fluid rounded-start" alt="..." style="height:200px">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">SAFE DELIVERY</h5>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card mb-3 w-100 boxshadow">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'images/ab2.jpeg'%}" class="img-fluid rounded-start" alt="..." style="height: 200px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">FAST DELIVERY</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card mb-3 w-100 boxshadow">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'images/ab3.jpeg'%}" class="img-fluid rounded-start" alt="..." style="height: 200px">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">FREE DELIVERY</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card mb-3 w-100 boxshadow">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{% static 'images/ab4.jpeg'%}" class="img-fluid rounded-start" alt="..." style="height:200px ;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">HOME DELIVERY</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+<!--ENDCART-->
+<div class="col-sm-1"></div>
+</div>
+<div class="row py-3">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-5 mx-2">
+        <div class="row border border-3 mt-2">
+            <div class="col-sm-4 abicon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="col-sm-8 fs-1">
+                Total Guest<br/>
+                20,00,000
+            </div>
+        </div>
+        <div class="row border border-3 mt-4">
+            <div class="col-sm-4 abicon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="col-sm-8 fs-1">
+                castles
+                <br/>
+                20+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-5">
+        <div class="row border border-3 mt-2">
+            <div class="col-sm-4 abicon">
+                <i class="fa-sharp fa-solid fa-city"></i>
+            </div>
+            <div class="col-sm-8 fs-1">Cities
+                <br/>
+                65000 +
+            </div>
+        </div>
+        <div class="row border border-3 mt-4">
+            <div class="col-sm-4 abicon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <div class="col-sm-8 fs-1">Countries
+                <br/>
+                21+
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

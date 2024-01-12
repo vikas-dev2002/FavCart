@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Viewproduct
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">YOUR SELECTED</span> <b style="color:#ff9800">Product <i class="fa-solid fa-cart-arrow-down"></i></b></div>
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            {% for a in pdata %}
+            <div class="col-sm-12">
+                <!--Start cart-->
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/{{a.ppic}}" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                          <h5 class="card-title">{{a.pcategory}}</h5>
+                          <p class="card-text">{{a.pdes}}</p>
+                          <p class="card-text">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
+                            <span class="text-danger"><s>{{a.pprice}}/-</s></span>
+                            <span class="text-success">{{a.dprice}}/-</span><b>Size</b>
+                            <span class="btn btn-sm bg-gcolor">{{a.psize}}</span>
+                            <div style="height: 35px;width: 35px;border-radius: 3px;background:{{a.pcolor}};"></div>
+                        </p>
+                          <p class="card-text">
+                            <a href="/user/mcart?pid={{a.id}}" class="btn btn-sm bg-gcolor">Add to Cart
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                            </a>
+                            <a href="/user/myordr?msg={{a.id}}" class="btn btn-sm bg-gcolor ms-5">Order Now</a>
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <small class="text-muted">
+                                {{a.pdate}}
+                            </small>|| <b class="text-success">{{a.pdel}}</b>
+                            <br/>
+                             
+                            <span style="font-size: 22px;">  RATE :
+                              <i class="fa-solid fa-star mt-5 text-success"></i>
+                              <i class="fa-solid fa-star mt-5 text-success"></i>
+                              <i class="fa-solid fa-star mt-5 text-success" ></i>
+                              <i class="fa-solid fa-star mt-5 text-success"></i>
+                              <i class="fa-solid fa-star mt-5" style="color:orange;" ></i>
+                            </span>
+                        </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!--Start cart-->
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+{% endblock %}

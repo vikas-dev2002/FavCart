@@ -1,0 +1,170 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<script src="{% static 'js/jquery-3.6.1.min.js'%}"></script>
+<script>
+$(document).ready(function(){
+  $("#btne").click(function(){
+    $(".uform").slideToggle(400)
+  })
+  
+})
+</script>
+{% if not request.session.userid %}
+<script>
+    alert("You Have Lognin First")
+    location.href="/user/signin/"
+</script>
+{% endif %}
+<div class="row">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">MY</span> <b style="color:#ff9800">PROFILE <i class="fa-solid fa-user-plus"></i></b></div>
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <!--start card-->
+        {% for x in mdata %}
+        <div class="card mb-3 w-100 boxshadow">
+            <div class="row g-0">
+              <div class="col-md-4 p-3">
+                <img src="/{{x.ppic}}" class="img-fluid rounded-start" alt="..." style="min-height:300px">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{x.name}}</h5>
+                  <p class="card-text">
+                    <b>Email : {{x.email}}</b><br/>
+                    <b>MOBILE NO :{{x.mobile}}</b><br/>
+                    <b>PASSWORD :{{x.passwd}}</b><br/>
+                    <b>ADDRESS :{{x.address}}</b><br/><br/>
+                    <a href="#" class="btn bg-gcolor float-end" id="btne">Edit Profile</a>
+
+                  </p>
+                  <p class="card-text"><small class="text-muted"></small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        <!--end card-->
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<!--form-->
+<style>
+  .cf2
+  {
+      padding-bottom: 25px;
+      background: url("{% static 'images/my.jpeg'%}");
+      background-size: cover;
+      background-position: center;
+  }
+  .su
+  {
+      margin-top: 30px;
+      font-size: 18px;
+  }
+  .sbtn
+  {
+      padding: 1% 5%;
+      margin-top: 20px;
+      background: white;
+      border:1px solid #ff8800;
+      color: #ff9800;
+      border-radius: 3px;
+      font-size: 20px;
+      transition: all ease-in .3s;
+  }
+  .sbtn:hover
+  {
+      background: #ff9800;
+      color: white;
+      transition: all ease-in .3s;
+
+  }
+  .rs
+  {
+      background:rgba(0,0,0,.3);
+      padding: 50px 50px;
+      box-shadow: 2px 2px 5px 2px gray ;
+  }
+  .txt
+  {
+      border:1px solid gray;
+      border-radius: 3px;
+      height: 45px;
+  }
+  .txt1
+  {
+      height:45px ;
+      width: 45px;
+      border: 1px solid gray;
+      color: white;
+      background: #ff8800;
+      font-size: 22px;
+  }
+  .uform
+  {
+    display: none;
+  }
+</style>
+<div class="container-fluid cf2 uform">
+  <div class="row">
+      <div class="col-sm-12">
+          <div class="row">
+              <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">EDIT</span> <b style="color:#ff9800">HERE <i class="fa-solid fa-pen"></i></b></div>
+          </div>
+          <div class="row">
+              <div class="col-sm-9 mx-auto rs">
+                  <form method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                  <div class="row">
+                      <div class="col-sm-6 su">
+                          Your Name : <br/>
+                              <div class="input-group">
+                                  <i class="input-group-text bg-bcolor text-light txt1"><i class="fa-solid fa-user"></i></i>
+                                  <input type="text" name="name" class="form-control txt" placeholder="Enter Your Name* ">
+                              </div>
+                      </div>
+                      <div class="col-sm-6 su">
+                          Mobile No : <br/>
+                              <div class="input-group">
+                                  <i class="input-group-text bg-bcolor text-light txt1"><i class="fa-solid fa-phone"></i></i>
+                                  <input type="text" name="mob" class="form-control txt" placeholder="Enter Your Mobile Number* ">
+                              </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6 su">
+                        Password : <br/>
+                              <div class="input-group">
+                                  <i class="input-group-text bg-bcolor text-light txt1"><i class="fa-solid fa-lock"></i></i>
+                                  <input type="password" name="passwd" autocomplete="off" class="form-control txt" placeholder="Enter Your Password* ">
+                              </div> 
+                        
+                      </div>
+                      <div class="col-sm-6 su">
+                        Confirm Password : <br/>
+                        <div class="input-group">
+                            <i class="input-group-text bg-bcolor text-light txt1"><i class="fa-solid fa-key"></i></i>
+                            <input type="password" name="cpasswd" autocomplete="off" class="form-control txt" placeholder="Enter Your Confirm Password* ">
+                        </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-sm-6 su">
+                          Your Address : <br><textarea name="msg" class="form-control" rows="3" placeholder="Enter Your Address*"></textarea>
+                      </div>
+                      <div class="col-sm-6 su">
+                          Image :<br/>
+                          <input type="file" class="form-control" name="ig" >
+                      </div>
+                  </div>
+                          <input type="submit" value="PRESS HERE" class="btn sbtn">
+                  </form>    
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div><!--end form-->
+{% endblock %}

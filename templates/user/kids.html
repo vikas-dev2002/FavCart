@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-sm-12 fs-2 text-center pb-3 pt-2"><span style="text-decoration: underline #ff8800;">KID'S</span> <b style="color:#ff9800">Product <i class="fa-solid fa-cart-arrow-down"></i></b></div>
+</div>
+<div class="row">
+    <div class="col-sm-9">
+        <div class="row">
+        <!--Start product-->
+        {% for a in data %}
+  <div class="col-sm-3 my-2">
+    <div class="card boxshadow">
+      <img src="/{{a.ppic}}" class="img-card-top" style="max-height: 250px;"/>
+      <div class="card-body">
+        <h5 class="card-title">{{a.pcategory}}</h5>
+        <b class=""><i class="fa-solid fa-indian-rupee-sign"></i></b>
+        <b class="text-danger"><s>{{a.pprice}}</s></b>
+        <b class="text-success fs-5">{{a.dprice}}</b>
+        <b class="ms-3">Size : {{a.psize}}</b>
+        <div style="height: 20px;width:20px;border-radius:2px;" class="float-end"></div>
+        <span class="text-muted fs-5">{{a.pdel}}</span><br/>
+        <a href="/user/viewproduct?abc={{a.id}}" class="btn btn-sm-4 bg-gcolor">Order Now</a>
+        <a href="#" class="btn btn-sm-4 bg-gcolor float-end">Add <i class="fa-solid fa-cart-shopping fs-5"></i></a>
+        <span class="text-muted"><br/><b>Date</b> : {{a.pdate}}</span><br/>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+        <!--End product-->
+    </div>
+    </div>
+    <div class="col-sm-3">
+        <ul class="list-group">
+            <li class="list-group-item fs-3 bg-bcolor text-light text-center fw-bold">Product category </li>
+            {% for x in cats%}
+            <li class="list-group-item">
+                <!--Start card-->
+                <div class="card w-100">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="/{{x.CPic}}" style="max-height: 65px;" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body">
+                            <a href="/user/kids?msg={{x.id}}" style="text-decoration: none;color:black;">
+                               <h5 class="card-title">{{x.Name}}</h5>
+                           </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!--End card-->
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
